@@ -8,6 +8,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_PREFIX_PATH "/opt/Qt/6.4.2/gcc_64/lib/cmake")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_SOURCE_DIR}/../build/debug)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_SOURCE_DIR}/../build/release)
+add_compile_options(-fPIC)
 
 find_package(Qt6 COMPONENTS Core Gui Widgets Network REQUIRED)
 
