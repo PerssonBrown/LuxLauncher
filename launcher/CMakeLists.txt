@@ -13,7 +13,10 @@ add_compile_options(-fPIC)
 find_package(Qt6 COMPONENTS Core Gui Widgets Network REQUIRED)
 
 set(CORE_SOURCES
-        filesystem.h filesystem.cpp downloader.cpp downloader.h)
+        filesystem.h
+        filesystem.cpp
+        net/downloader.h
+        net/downloader.cpp net/networkrequest.cpp net/networkrequest.h)
 
 add_executable(LuxLauncher ${CORE_SOURCES} main.cpp)
 
