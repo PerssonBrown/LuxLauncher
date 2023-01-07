@@ -12,8 +12,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_SOURCE_DIR}/../build/release)
 find_package(Qt6 COMPONENTS Core Gui Widgets Network REQUIRED)
 
 set(CORE_SOURCES
-        filesystem.h filesystem.cpp)
+        filesystem.h filesystem.cpp downloader.cpp downloader.h)
 
 add_executable(LuxLauncher ${CORE_SOURCES} main.cpp)
 
-target_link_libraries(LuxLauncher Qt6::Core Qt6::Gui Qt6::Widgets)
+target_link_libraries(LuxLauncher Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Network)
