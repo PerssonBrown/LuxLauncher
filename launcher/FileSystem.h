@@ -4,9 +4,9 @@
 #include <QFile>
 #include <QString>
 
-class Filesystem {
+class FileSystem {
 public:
-    Filesystem();
+    FileSystem();
     bool isExists(const QString &path);
     QFile* writeOnlyPoint(const QString &path);
     QFile* readOnlyPoint(const QString &path);

@@ -1,16 +1,16 @@
-#include "filesystem.h"
+#include "FileSystem.h"
 #include <QFile>
 
-Filesystem::Filesystem() {}
+FileSystem::FileSystem() {}
 
-bool Filesystem::isExists(const QString &path) {
+bool FileSystem::isExists(const QString &path) {
     if (path.isEmpty() || !QFile::exists(path)) {
         return false;
     }
     return true;
 }
 
-QFile* Filesystem::readOnlyPoint(const QString &path) {
+QFile* FileSystem::readOnlyPoint(const QString &path) {
     if (!this->isExists(path)) {
         return nullptr;
     }
@@ -21,7 +21,7 @@ QFile* Filesystem::readOnlyPoint(const QString &path) {
     return ptr;
 }
 
-QFile* Filesystem::writeOnlyPoint(const QString &path) {
+QFile* FileSystem::writeOnlyPoint(const QString &path) {
     if (!this->isExists(path)) {
         return nullptr;
     }
@@ -32,7 +32,7 @@ QFile* Filesystem::writeOnlyPoint(const QString &path) {
     return ptr;
 }
 
-QFile* Filesystem::appendPoint(const QString &path) {
+QFile* FileSystem::appendPoint(const QString &path) {
     if (!this->isExists(path)) {
         return nullptr;
     }
@@ -43,7 +43,7 @@ QFile* Filesystem::appendPoint(const QString &path) {
     return ptr;
 }
 
-QString Filesystem::readOnly(const QString &path) {
+QString FileSystem::readOnly(const QString &path) {
     QFile *file = this->readOnlyPoint(path);
     if (file == nullptr) {
         return QString();
@@ -51,7 +51,7 @@ QString Filesystem::readOnly(const QString &path) {
     return file->readAll();
 }
 
-bool Filesystem::writeOnly(const QString &path, const QString &str) {
+bool FileSystem::writeOnly(const QString &path, const QString &str) {
     QFile *file = this->writeOnlyPoint(path);
     if (file == nullptr) {
         return false;
@@ -62,7 +62,7 @@ bool Filesystem::writeOnly(const QString &path, const QString &str) {
     return true;
 }
 
-bool Filesystem::append(const QString &path, const QString &str) {
+bool FileSystem::append(const QString &path, const QString &str) {
     QFile *file = this->appendPoint(path);
     if (file == nullptr) {
         return false;

@@ -1,4 +1,4 @@
-#include "downloader.h"
+#include "Downloader.h"
 
 Downloader::Downloader(QObject *parent) : QObject(parent) {}
 

@@ -1,4 +1,4 @@
-#include "networkrequest.h"
+#include "NetworkRequest.h"
 #include <QUrl>
 #include <QObject>
 #include <QtNetwork>
