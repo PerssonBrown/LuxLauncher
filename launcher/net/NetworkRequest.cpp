@@ -13,7 +13,7 @@ int NetworkRequest::sendPostRequest(const QString &strUrl, const QByteArray &dat
     QNetworkRequest request;
     request.setUrl(QUrl(strUrl));
     request.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("application/json"));
-    for (QMap<QString, QString>::const_iterator it = map.begin(); it != map.end(); ++it) {
+    for (QMap<QString, QString>::const_iterator it = header.begin(); it != header.end(); ++it) {
         request.setRawHeader(it.key().toUtf8(), it.value().toUtf8());
     }
 
@@ -40,7 +40,7 @@ int NetworkRequest::sendGetRequest(const QString &strUrl, const QMap<QString, QS
     QNetworkRequest request;
     request.setUrl(QUrl(strUrl));
     request.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("application/json"));
-    for (QMap<QString, QString>::const_iterator it = map.begin(); it != map.end(); ++it) {
+    for (QMap<QString, QString>::const_iterator it = header.begin(); it != header.end(); ++it) {
         request.setRawHeader(it.key().toUtf8(), it.value().toUtf8());
     }
 
