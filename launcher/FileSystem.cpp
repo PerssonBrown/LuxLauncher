@@ -22,9 +22,6 @@ QFile* FileSystem::readOnlyPoint(const QString &path) {
 }
 
 QFile* FileSystem::writeOnlyPoint(const QString &path) {
-    if (!this->isExists(path)) {
-        return nullptr;
-    }
     QFile *ptr = new QFile(path);
     if (!ptr->open(QIODevice::WriteOnly)) {
         return nullptr;
@@ -33,9 +30,6 @@ QFile* FileSystem::writeOnlyPoint(const QString &path) {
 }
 
 QFile* FileSystem::appendPoint(const QString &path) {
-    if (!this->isExists(path)) {
-        return nullptr;
-    }
     QFile *ptr = new QFile(path);
     if (!ptr->open(QIODevice::WriteOnly | QIODevice::Append)) {
         return nullptr;
