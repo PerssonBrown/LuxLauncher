@@ -8,7 +8,7 @@ int NetworkRequest::sendPostRequest(const QString &strUrl, const QByteArray &dat
     return this->sendPostRequest(strUrl, data, map, response);
 }
 
-int NetworkRequest::sendPostRequest(const QString &strUrl, const QByteArray &data, const QMap<QString, QString> &map, QString &response) {
+int NetworkRequest::sendPostRequest(const QString &strUrl, const QByteArray &data, const QMap<QString, QString> &header, QString &response) {
     QNetworkAccessManager *manager = new QNetworkAccessManager();
     QNetworkRequest request;
     request.setUrl(QUrl(strUrl));
@@ -35,7 +35,7 @@ int NetworkRequest::sendGetRequest(const QString &strUrl, QString &response) {
     return this->sendGetRequest(strUrl, map, response);
 }
 
-int NetworkRequest::sendGetRequest(const QString &strUrl, const QMap<QString, QString> &map, QString &response) {
+int NetworkRequest::sendGetRequest(const QString &strUrl, const QMap<QString, QString> &header, QString &response) {
     QNetworkAccessManager *manager = new QNetworkAccessManager();
     QNetworkRequest request;
     request.setUrl(QUrl(strUrl));
