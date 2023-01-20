@@ -19,7 +19,8 @@ set(CORE_SOURCES
         net/Downloader.cpp
         net/NetworkRequest.h
         net/NetworkRequest.cpp
-        )
+        account/AccountManager.h
+        account/AccountManager.cpp )
 
 add_executable(LuxLauncher ${CORE_SOURCES} main.cpp)
 
