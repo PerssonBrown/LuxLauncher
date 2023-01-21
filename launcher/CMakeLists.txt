@@ -20,7 +20,9 @@ set(CORE_SOURCES
         net/NetworkRequest.h
         net/NetworkRequest.cpp
         account/AccountManager.h
-        account/AccountManager.cpp )
+        account/AccountManager.cpp
+        account/MSALogin.h
+        account/MSALogin.cpp )
 
 add_executable(LuxLauncher ${CORE_SOURCES} main.cpp)
 
