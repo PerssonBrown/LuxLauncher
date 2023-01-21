@@ -104,7 +104,7 @@ int MSALogin::login() {
     // Step2: Obtain xsts
     m_request.setUrl(QUrl(xstsAuthorizationUrl));
     m_request.setHeader(QNetworkRequest::ContentTypeHeader, QVariant(MIME_TYPE_JSON));
-    m_request.setRawHeader("Accept", MIME_TYPE_JSON);
+    m_request.setRawHeader("Accept", MIME_TYPE_JSON.toUtf8());
     body = "{\"Properties\": {\"SandboxId\": \"RETAIL\",\"UserTokens\": [\"" +
             m_xblToken + "\"]},\"RelyingParty\": \"rp://api.minecraftservices.com/\",\"TokenType\": \"JWT\"}";
     m_reply = m_manager->post(m_request, body.toUtf8());
